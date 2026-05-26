@@ -185,3 +185,13 @@ hiddenElements.forEach((el) => {
     el.classList.add('hidden-section');
     revealOnScroll.observe(el);
 });
+
+document.addEventListener("mousemove", (e) => {
+
+    const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+
+    document.querySelector(".hero-content").style.transform =
+        `translate(${moveX}px, ${moveY}px)`;
+
+});
