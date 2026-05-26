@@ -168,3 +168,20 @@ if (window.innerWidth > 820) {
 console.log('%c👋 Hey, I\'m Jupalle Venkat!', 'color:#0ea5e9;font-size:18px;font-weight:bold;');
 console.log('%c📊 Data Analyst | 💻 Full Stack Dev | 🚀 Open to Opportunities', 'color:#94a3b8;font-size:13px;');
 console.log('%c📧 jupallivenkat634@gmail.com', 'color:#0ea5e9;font-size:12px;');
+
+const hiddenElements = document.querySelectorAll('.section');
+
+const revealOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-section');
+        }
+
+    });
+});
+
+hiddenElements.forEach((el) => {
+    el.classList.add('hidden-section');
+    revealOnScroll.observe(el);
+});
