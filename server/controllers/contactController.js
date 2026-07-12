@@ -40,5 +40,5 @@ const createContact = async (req, res) => {
 };
 
 module.exports = {
-  createcontact,
+  createContact,
 };
