@@ -3,294 +3,133 @@ const { Resend } = require("resend");
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async ({ name, email, subject, message }) => {
+  const currentDate = new Date().toLocaleString("en-IN", {
+    dateStyle: "full",
+    timeStyle: "short",
+  });
 
-    const currentDate = new Date().toLocaleString("en-IN", {
-        dateStyle: "full",
-        timeStyle: "short"
-    });
+  // ===========================
+  // ADMIN EMAIL
+  // ===========================
 
-    // ===========================================
-    // EMAIL TO YOU
-    // ===========================================
+  const adminMail = {
+    subject: `📩 New Portfolio Contact | ${subject}`,
+    html: `
+      <div style="background:#f4f7fb;padding:40px;font-family:Arial,sans-serif;">
+        <div style="max-width:700px;margin:auto;background:white;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);">
 
-    const adminMail = {
-        from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
-        to: process.env.EMAIL_USER,
-        replyTo: email,
-        subject: `📩 New Portfolio Contact | ${subject}`,
-        html: `
-        <div style="background:#f4f7fb;padding:40px;font-family:Arial,sans-serif;">
+          <div style="background:#0f172a;padding:30px;text-align:center;color:white;">
+            <h1 style="margin:0;">📩 Portfolio Contact</h1>
+            <p>Someone contacted you through your portfolio.</p>
+          </div>
 
-            <div style="max-width:700px;margin:auto;background:white;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);">
+          <div style="padding:35px;">
 
-                <div style="background:#0f172a;padding:30px;text-align:center;color:white;">
+            <p><strong>👤 Name:</strong> ${name}</p>
+            <p><strong>📧 Email:</strong> ${email}</p>
+            <p><strong>📝 Subject:</strong> ${subject}</p>
 
-                    <h1 style="margin:0;font-size:28px;">
-                        📩 Portfolio Contact
-                    </h1>
+            <h3>💬 Message</h3>
 
-                    <p style="margin-top:10px;color:#cbd5e1;">
-                        Someone contacted you through your portfolio.
-                    </p>
-
-                </div>
-
-                <div style="padding:35px;">
-
-                    <table style="width:100%;border-collapse:collapse;">
-
-                        <tr>
-                            <td style="padding:12px;font-weight:bold;">👤 Name</td>
-                            <td>${name}</td>
-                        </tr>
-
-                        <tr style="background:#f8fafc;">
-                            <td style="padding:12px;font-weight:bold;">📧 Email</td>
-                            <td>${email}</td>
-                        </tr>
-
-                        <tr>
-                            <td style="padding:12px;font-weight:bold;">📝 Subject</td>
-                            <td>${subject}</td>
-                        </tr>
-
-                    </table>
-
-                    <br>
-
-                    <h3>💬 Message</h3>
-
-                    <div style="
-                        background:#f8fafc;
-                        padding:20px;
-                        border-left:5px solid #2563eb;
-                        border-radius:8px;
-                        line-height:1.7;
-                    ">
-                        ${message}
-                    </div>
-
-                    <br>
-
-                    <p><strong>🕒 Received:</strong> ${currentDate}</p>
-
-                    <br>
-
-                    <a href="mailto:${email}"
-                    style="
-                    background:#2563eb;
-                    color:white;
-                    padding:14px 25px;
-                    text-decoration:none;
-                    border-radius:8px;
-                    font-weight:bold;
-                    display:inline-block;">
-                    Reply to ${name}
-                    </a>
-
-                </div>
-
-                <div style="background:#f8fafc;padding:20px;text-align:center;color:#64748b;font-size:14px;">
-
-                    Portfolio Contact Notification
-
-                </div>
-
+            <div style="background:#f8fafc;padding:20px;border-left:5px solid #2563eb;">
+              ${message}
             </div>
 
+            <br>
+
+            <p><strong>Received:</strong> ${currentDate}</p>
+
+          </div>
+
         </div>
-        `
-    };
+      </div>
+    `,
+  };
 
-    // ===========================================
-    // AUTO REPLY
-    // ===========================================
+  // ===========================
+  // USER AUTO REPLY
+  // ===========================
 
-    const userMail = {
-        from: `"Jupalle Venkat" <${process.env.EMAIL_USER}>`,
-        to: email,
-        subject: "✅ Thank you for contacting Jupalle Venkat",
-        html: `
-        <div style="background:#eef4ff;padding:40px;font-family:Arial,sans-serif;">
+  const userMail = {
+    subject: "✅ Thank you for contacting Jupalle Venkat",
+    html: `
+      <div style="background:#eef4ff;padding:40px;font-family:Arial,sans-serif;">
 
-            <div style="max-width:700px;margin:auto;background:white;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);">
+        <div style="max-width:700px;margin:auto;background:white;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);">
 
-                <div style="background:linear-gradient(135deg,#2563eb,#0ea5e9);padding:45px;text-align:center;color:white;">
+          <div style="background:linear-gradient(135deg,#2563eb,#0ea5e9);padding:45px;text-align:center;color:white;">
+            <h1>Jupalle Venkat</h1>
+            <p>Thank you for reaching out!</p>
+          </div>
 
-                    <h1 style="margin:0;font-size:32px;">
-                        Jupalle Venkat
-                    </h1>
+          <div style="padding:40px;">
 
-                    <p style="margin-top:10px;font-size:16px;">
-                        Thank you for reaching out!
-                    </p>
+            <h2>Hello ${name} 👋</h2>
 
-                </div>
+            <p>
+              Thank you for contacting me through my portfolio.
+            </p>
 
-                <div style="padding:40px;">
+            <p>
+              I have received your message successfully and I'll get back to you as soon as possible.
+            </p>
 
-                    <h2 style="color:#0f172a;">
-                        Hello ${name} 👋
-                    </h2>
+            <hr>
 
-                    <p style="line-height:1.8;color:#475569;">
+            <h3>Your Message</h3>
 
-                        Thank you for contacting me through my portfolio.
+            <p><strong>Subject:</strong> ${subject}</p>
 
-                        I have successfully received your message and appreciate you taking the time to reach out.
-
-                    </p>
-
-                    <p style="line-height:1.8;color:#475569;">
-
-                        I'll review your message carefully and get back to you as soon as possible.
-
-                    </p>
-
-                    <hr style="margin:35px 0;">
-
-                    <h3>Your Submission</h3>
-
-                    <p><strong>Subject:</strong> ${subject}</p>
-
-                    <div style="
-                    background:#f8fafc;
-                    padding:18px;
-                    border-left:5px solid #22c55e;
-                    border-radius:8px;
-                    line-height:1.7;
-                    ">
-                        ${message}
-                    </div>
-
-                    <br><br>
-
-                    <div style="text-align:center;">
-
-                        <a href="https://venkyjupalli.github.io/my-portfolio/"
-                        style="
-                        background:#2563eb;
-                        color:white;
-                        text-decoration:none;
-                        padding:14px 22px;
-                        border-radius:8px;
-                        margin:6px;
-                        display:inline-block;">
-                        🌐 Portfolio
-                        </a>
-
-                        <a href="https://github.com/Venkyjupalli"
-                        style="
-                        background:#111827;
-                        color:white;
-                        text-decoration:none;
-                        padding:14px 22px;
-                        border-radius:8px;
-                        margin:6px;
-                        display:inline-block;">
-                        💻 GitHub
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/jupallevenkat/"
-                        style="
-                        background:#0A66C2;
-                        color:white;
-                        text-decoration:none;
-                        padding:14px 22px;
-                        border-radius:8px;
-                        margin:6px;
-                        display:inline-block;">
-                        💼 LinkedIn
-                        </a>
-
-                    </div>
-
-                    <br><br>
-
-                    <div style="
-                    background:#f8fafc;
-                    border-radius:10px;
-                    padding:20px;
-                    ">
-
-                        <strong>Submission Time</strong>
-
-                        <br><br>
-
-                        ${currentDate}
-
-                    </div>
-
-                    <br>
-
-                    <p style="color:#64748b;line-height:1.8;">
-
-                        This is an automated confirmation email.
-
-                        If you have any additional information to share,
-                        simply reply to this email.
-
-                    </p>
-
-                    <br>
-
-                    <p>
-
-                        Best Regards,
-
-                        <br><br>
-
-                        <strong>Jupalle Venkat</strong>
-
-                        <br>
-
-                        Aspiring Data Analyst | Full Stack Developer
-
-                    </p>
-
-                </div>
-
-                <div style="
-                background:#0f172a;
-                color:white;
-                text-align:center;
-                padding:22px;
-                font-size:14px;
-                ">
-
-                    © ${new Date().getFullYear()} Jupalle Venkat • Built with Node.js, Express & MongoDB
-
-                </div>
-
+            <div style="background:#f8fafc;padding:18px;border-left:5px solid #22c55e;">
+              ${message}
             </div>
 
-        </div>
-        `
-    };
+            <br>
 
-    try {
+            <p><strong>Submitted:</strong> ${currentDate}</p>
+
+            <br>
+
+            <a href="https://venkyjupalli.github.io/my-portfolio/"
+              style="background:#2563eb;color:white;padding:12px 20px;text-decoration:none;border-radius:8px;">
+              Visit Portfolio
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    `,
+  };
+
+  try {
+    // Email to you
     const adminResponse = await resend.emails.send({
-        from: "Portfolio <onboarding@resend.dev>",
-        to: "jupallivenkat634@gmail.com",
-        replyTo: email,
-        subject: `📩 New Portfolio Contact | ${subject}`,
-        html: adminMail.html,
+      from: "Portfolio <onboarding@resend.dev>",
+      to: "jupallivenkat634@gmail.com",
+      replyTo: email,
+      subject: adminMail.subject,
+      html: adminMail.html,
     });
 
     console.log("Admin Response:", adminResponse);
 
+    // Auto reply
     const userResponse = await resend.emails.send({
-        from: "Jupalle Venkat <onboarding@resend.dev>",
-        to: email,
-        subject: "✅ Thank you for contacting Jupalle Venkat",
-        html: userMail.html,
+      from: "Jupalle Venkat <onboarding@resend.dev>",
+      to: email,
+      subject: userMail.subject,
+      html: userMail.html,
     });
 
     console.log("User Response:", userResponse);
 
-} catch (error) {
-    console.error("Resend Error:", error);
-}
+    console.log("✅ Emails sent successfully");
+  } catch (error) {
+    console.error("❌ Resend Error:", error);
+    throw error;
+  }
+};
 
 module.exports = sendEmail;
-}
