@@ -142,7 +142,7 @@ async function handleSubmit(e) {
     const message = form.querySelector('textarea[name="message"]').value;
 
     try {
-        const response = await fetch("http://localhost:5000/api/contact", {
+        const response = await fetch("https://portfolio-backend-nf7b.onrender.com", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
