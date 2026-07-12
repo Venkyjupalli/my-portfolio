@@ -1,4 +1,6 @@
-const nodemailer = require("nodemailer");
+const nodemailer = require("resend");
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async ({ name, email, subject, message }) => {
 
@@ -6,18 +8,6 @@ const sendEmail = async ({ name, email, subject, message }) => {
         dateStyle: "full",
         timeStyle: "short"
     });
-
-    const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
-});
-    await transporter.verify();
-console.log("✅ Gmail SMTP Connected");
 
     // ===========================================
     // EMAIL TO YOU
@@ -278,8 +268,22 @@ console.log("✅ Gmail SMTP Connected");
         `
     };
 
-    await transporter.sendMail(adminMail);
-    await transporter.sendMail(userMail);
+   await resend.emails.send({
+    from: "Portfolio <onboarding@resend.dev>",
+    to: "jupallivenkat634@gmail.com",
+    replyTo: email,
+    subject: `📩 New Portfolio Contact | ${subject}`,
+    html: adminMail.html,
+});
+
+await resend.emails.send({
+    from: "Jupalle Venkat <onboarding@resend.dev>",
+    to: email,
+    subject: "✅ Thank you for contacting Jupalle Venkat",
+    html: userMail.html,
+});
+
+console.log("✅ Emails sent successfully");
 };
 
 module.exports = sendEmail;
