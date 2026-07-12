@@ -268,22 +268,29 @@ const sendEmail = async ({ name, email, subject, message }) => {
         `
     };
 
-   await resend.emails.send({
-    from: "Portfolio <onboarding@resend.dev>",
-    to: "jupallivenkat634@gmail.com",
-    replyTo: email,
-    subject: `📩 New Portfolio Contact | ${subject}`,
-    html: adminMail.html,
-});
+    try {
+    const adminResponse = await resend.emails.send({
+        from: "Portfolio <onboarding@resend.dev>",
+        to: "jupallivenkat634@gmail.com",
+        replyTo: email,
+        subject: `📩 New Portfolio Contact | ${subject}`,
+        html: adminMail.html,
+    });
 
-await resend.emails.send({
-    from: "Jupalle Venkat <onboarding@resend.dev>",
-    to: email,
-    subject: "✅ Thank you for contacting Jupalle Venkat",
-    html: userMail.html,
-});
+    console.log("Admin Response:", adminResponse);
 
-console.log("✅ Emails sent successfully");
-};
+    const userResponse = await resend.emails.send({
+        from: "Jupalle Venkat <onboarding@resend.dev>",
+        to: email,
+        subject: "✅ Thank you for contacting Jupalle Venkat",
+        html: userMail.html,
+    });
+
+    console.log("User Response:", userResponse);
+
+} catch (error) {
+    console.error("Resend Error:", error);
+}
 
 module.exports = sendEmail;
+}
