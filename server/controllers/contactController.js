@@ -1,4 +1,4 @@
-const Contact = require("../models/Contact");
+const Contact = require("../models/contact");
 const sendEmail = require("../utils/sendEmail");
 const createContact = async (req, res) => {
   try {
@@ -11,7 +11,7 @@ const createContact = async (req, res) => {
       });
     }
 
-    const newContact = await Contact.create({
+    const newcontact = await contact.create({
       name,
       email,
       subject,
@@ -27,7 +27,7 @@ const createContact = async (req, res) => {
     res.status(201).json({
       success: true,
       message: "Message sent successfully",
-      data: newContact,
+      data: newcontact,
     });
   } catch (error) {
     console.error(error);
@@ -40,5 +40,5 @@ const createContact = async (req, res) => {
 };
 
 module.exports = {
-  createContact,
+  createcontact,
 };
