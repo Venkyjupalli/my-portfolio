@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupalle Venkat | Data Analyst & Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+    <img src="assets/images/logo.png" alt="JV Logo" class="logo-img">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items"><a class="links" href="#home">Home</a></li>
+                    <li class="menu-list-items"><a class="links" href="#about">About</a></li>
+                    <li class="menu-list-items"><a class="links" href="#skills">Skills</a></li>
+                    <li class="menu-list-items"><a class="links" href="#portfolio">Portfolio</a></li>
+                    <li class="menu-list-items"><a class="links" href="#services">Services</a></li>
+                    <li class="menu-list-items"><a class="links" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <h3 class="greet-heading">Hello World, I'm</h3>
+            <h1 class="hero-name">JUPALLE<br><span class="accent-text">VENKAT</span></h1>
+            <div class="typewriter-wrap">
+                <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+            </div>
+            <p class="hero-desc">
+                Fresher passionate about transforming raw data into powerful insights<br>
+                and building scalable full-stack web applications.
+            </p>
+            <div class="intro-buttons">
+                <a href="#contact" class="btn common-btn">
+                    <i class="fas fa-paper-plane"></i> Hire Me
+                </a>
+                <a href="https://www.linkedin.com/in/jupallevenkat/" target="_blank" class="btn ghost-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">6+</span>
+                    <span class="stat-label">Tech Skills</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">Domains</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">∞</span>
+                    <span class="stat-label">Curiosity</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-card floating">
+                <div class="code-card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="code-lang">python</span>
+                </div>
+                <pre class="code-body"><span class="c-kw">import</span> pandas <span class="c-kw">as</span> pd
+<span class="c-kw">import</span> matplotlib
+
+<span class="c-fn">def</span> <span class="c-name">analyze</span>(data):
+    df = pd.<span class="c-fn">DataFrame</span>(data)
+    insights = df.<span class="c-fn">describe</span>()
+    <span class="c-kw">return</span> insights
+
+<span class="c-cm"># Turning data → decisions</span></pre>
+            </div>
+            <div class="floating-badge fb1">
+                <i class="fas fa-chart-bar"></i> Power BI
+            </div>
+            <div class="floating-badge fb2">
+                <i class="fas fa-database"></i> SQL
+            </div>
+            <div class="floating-badge fb3">
+                <i class="fab fa-python"></i> Python
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about section">
+        <div class="about-image-col">
+            <div class="about-img-wrap">
+                <img src="assets/images/profile.jpg" alt="Jupalle Venkat">
+                <div class="about-img-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Fresher<br>Developer</span>
+                </div>
+            </div>
+        </div>
+        <div class="about-text-col">
+            <p class="section-tag">// about me</p>
+            <h1 class="my-heading">Who Am I?</h1>
+            <p class="about-lead">
+                I'm <strong>Jupalle Venkat</strong> — an aspiring <strong>Data Analyst</strong> and
+                <strong>Full Stack Developer</strong> who loves turning complex data into clear stories
+                and building seamless web experiences from front to back.
+            </p>
+            <div class="about-details">
+                <div class="detail-row">
+                    <span class="detail-label"><i class="fas fa-user"></i> Name</span>
+                    <span class="detail-value">Jupalle Venkat</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label"><i class="fas fa-briefcase"></i> Role</span>
+                    <span class="detail-value">Data Analyst + Full Stack Dev</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label"><i class="fas fa-layer-group"></i> Level</span>
+                    <span class="detail-value">Fresher — Ready to Contribute</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label"><i class="fas fa-envelope"></i> Email</span>
+                    <span class="detail-value">jupallivenkat634@gmail.com</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label"><i class="fab fa-linkedin"></i> LinkedIn</span>
+                    <span class="detail-value">
+                        <a href="https://www.linkedin.com/in/jupallevenkat/" target="_blank">jupallevenkat</a>
+                    </span>
+                </div>
+            </div>
+            <a href="#contact" class="btn common-btn mt-1">
+                <i class="fas fa-handshake"></i> Let's Work Together
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="skills section">
+        <p class="section-tag center">// tech stack</p>
+        <h1 class="my-heading text-center">My Skills</h1>
+        <p class="section-subtitle">Technologies I work with across Data & Development</p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-cat-title"><i class="fas fa-chart-pie"></i> Data & Analytics</h3>
+                <div class="skill-pills">
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png" alt="Excel"> Excel
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/sql.png" alt="SQL"> SQL
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"> Power BI
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"> Python
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-cat-title"><i class="fas fa-laptop-code"></i> Frontend</h3>
+                <div class="skill-pills">
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"> HTML5
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"> CSS3
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JS"> JavaScript
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-cat-title"><i class="fas fa-server"></i> Backend</h3>
+                <div class="skill-pills">
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"> Python
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/nodejs.png" alt="Node"> Node.js
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-cat-title"><i class="fas fa-database"></i> Databases</h3>
+                <div class="skill-pills">
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/mysql-logo.png" alt="MySQL"> MySQL
+                    </div>
+                    <div class="skill-pill">
+                        <img src="https://img.icons8.com/color/48/mongodb.png" alt="MongoDB"> MongoDB
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="portfolio section" id="portfolio">
+        <p class="section-tag center">// my work</p>
+        <h1 class="my-heading text-center">Featured Projects</h1>
+        <p class="section-subtitle">A showcase of what I've built and analyzed</p>
+
+        <div class="portfolio-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="port-card port-card-featured">
+                <div class="port-card-img">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80" alt="Movie Recommendation System">
+                    <div class="port-overlay">
+                        <span class="port-tag">🎬 Data Analytics</span>
+                    </div>
+                </div>
+                <div class="port-card-body">
+                    <div class="port-card-header-row">
+                        <h3>Movie Recommendation System</h3>
+                        <span class="port-number">01</span>
+                    </div>
+                    <p>An intelligent movie recommendation engine that analyzes user preferences, viewing history, and genre patterns using collaborative filtering and content-based algorithms. Built with Python data tools and visualized via interactive dashboards.</p>
+                    <div class="port-highlights">
+                        <span class="port-highlight-item"><i class="fas fa-brain"></i> Collaborative Filtering</span>
+                        <span class="port-highlight-item"><i class="fas fa-chart-bar"></i> Data Visualization</span>
+                        <span class="port-highlight-item"><i class="fas fa-database"></i> SQL Data Pipeline</span>
+                    </div>
+                    <div class="port-tech">
+                        <span>Python</span><span>Pandas</span><span>SQL</span><span>Power BI</span><span>Excel</span><span>Matplotlib</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="port-card port-card-featured">
+                <div class="port-card-img">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" alt="Healthcare WhatsApp AI Agent">
+                    <div class="port-overlay">
+                        <span class="port-tag">🏥 AI + Automation</span>
+                    </div>
+                </div>
+                <div class="port-card-body">
+                    <div class="port-card-header-row">
+                        <h3>Healthcare Appointment Booking on WhatsApp</h3>
+                        <span class="port-number">02</span>
+                    </div>
+                    <p>An end-to-end AI-powered healthcare system where patients book doctor appointments directly via WhatsApp. Powered by an AI agent that understands natural language, triggers n8n automation workflows, and manages bookings in real-time with a clean admin dashboard.</p>
+                    <div class="port-highlights">
+                        <span class="port-highlight-item"><i class="fab fa-whatsapp"></i> WhatsApp Automation</span>
+                        <span class="port-highlight-item"><i class="fas fa-robot"></i> AI Agent</span>
+                        <span class="port-highlight-item"><i class="fas fa-project-diagram"></i> n8n Workflows</span>
+                    </div>
+                    <div class="port-tech">
+                        <span>AI Agent</span><span>n8n</span><span>HTML/CSS/JS</span><span>WhatsApp API</span><span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="port-card port-card-featured">
+                <div class="port-card-img">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=700&q=80" alt="AI Health Symptoms Predictor">
+                    <div class="port-overlay">
+                        <span class="port-tag">🤖 AI + Full Stack</span>
+                    </div>
+                </div>
+                <div class="port-card-body">
+                    <div class="port-card-header-row">
+                        <h3>AI Health Symptoms Predictor</h3>
+                        <span class="port-number">03</span>
+                    </div>
+                    <p>A full-stack AI health assistant that takes symptom inputs from users through a responsive web interface and uses AI agents to predict possible conditions, recommend actions, and provide relevant health insights — all in real time.</p>
+                    <div class="port-highlights">
+                        <span class="port-highlight-item"><i class="fas fa-stethoscope"></i> Symptom Analysis</span>
+                        <span class="port-highlight-item"><i class="fas fa-layer-group"></i> Full Stack</span>
+                        <span class="port-highlight-item"><i class="fas fa-robot"></i> AI Agents</span>
+                    </div>
+                    <div class="port-tech">
+                        <span>AI Agents</span><span>Python</span><span>HTML/CSS/JS</span><span>MySQL</span><span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+        <p class="section-tag center">// what I offer</p>
+        <h1 class="my-heading text-center">My Services</h1>
+        <p class="section-subtitle">How I can add value to your team or project</p>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data Analytics</h3>
+                <p>Cleaning, analyzing, and visualizing datasets to extract meaningful business insights using Python, Excel, and SQL.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Data Cleaning & EDA</li>
+                    <li><i class="fas fa-check"></i> Statistical Analysis</li>
+                    <li><i class="fas fa-check"></i> Insight Reports</li>
+                </ul>
+            </div>
+
+            <div class="service-card featured">
+                <div class="featured-label">Most Offered</div>
+                <div class="service-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>Dashboard & BI</h3>
+                <p>Building interactive Power BI dashboards with KPIs, charts, and filters that help stakeholders make faster decisions.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Power BI Dashboards</li>
+                    <li><i class="fas fa-check"></i> Excel Reports</li>
+                    <li><i class="fas fa-check"></i> Data Storytelling</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Full Stack Development</h3>
+                <p>Designing and building responsive web apps with clean frontends and robust backends connected to real databases.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Frontend (HTML/CSS/JS)</li>
+                    <li><i class="fas fa-check"></i> Backend APIs</li>
+                    <li><i class="fas fa-check"></i> MySQL & MongoDB</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Scripting</h3>
+                <p>Automating tasks, processing data, and building analysis pipelines using Python libraries like Pandas and Matplotlib.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Data Pipelines</li>
+                    <li><i class="fas fa-check"></i> Automation Scripts</li>
+                    <li><i class="fas fa-check"></i> Visualization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Database Management</h3>
+                <p>Designing efficient database schemas, writing optimized queries, and managing both SQL and NoSQL databases.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> MySQL Design</li>
+                    <li><i class="fas fa-check"></i> MongoDB Collections</li>
+                    <li><i class="fas fa-check"></i> Query Optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsive UI Design</h3>
+                <p>Crafting pixel-perfect, mobile-first interfaces with smooth animations and clean user experience principles.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Mobile-First Design</li>
+                    <li><i class="fas fa-check"></i> CSS Animations</li>
+                    <li><i class="fas fa-check"></i> Cross-browser Support</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+        <p class="section-tag center">// get in touch</p>
+        <h1 class="my-heading text-center">Contact Me</h1>
+        <p class="section-subtitle">Let's connect and create something great together</p>
+
+        <div class="contact-content">
+            <div class="contact-form-container">
+                <h2 class="greet-heading">Send a Message</h2>
+                <form id="contact-form" class="contact-form" onsubmit="handleSubmit(event)">
+
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input
+            id="name"
+            class="form-controls"
+            type="text"
+            name="name"
+            placeholder="John Doe"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input
+            id="email"
+            class="form-controls"
+            type="email"
+            name="email"
+            placeholder="john@example.com"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input
+            id="subject"
+            class="form-controls"
+            type="text"
+            name="subject"
+            placeholder="Project Inquiry"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            class="form-controls"
+            name="message"
+            placeholder="Tell me about your project..."
+            rows="5"
+            required
+        ></textarea>
+    </div>
+
+    <button class="btn common-btn form-btn" type="submit">
+        <i class="fas fa-paper-plane"></i>
+        Send Message
+    </button>
+
+</form>
+            <div class="contact-details">
+                <h2 class="greet-heading">Contact Details</h2>
+                <div class="contact-info-cards">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-info-label">Email</span>
+                            <a href="mailto:jupallivenkat634@gmail.com" class="contact-info-value">jupallivenkat634@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <span class="contact-info-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/jupallevenkat/" target="_blank" class="contact-info-value">jupallevenkat</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <span class="contact-info-label">GitHub</span>
+                            <a href="https://github.com/Venkyjupalli" target="_blank" class="contact-info-value">Venkyjupalli</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-code"></i></div>
+                        <div>
+                            <span class="contact-info-label">LeetCode</span>
+                            <a href="https://leetcode.com/u/jupalle_venky/" target="_blank" class="contact-info-value">jupalle_venky</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="availability-card">
+                    <div class="avail-dot"></div>
+                    <div>
+                        <strong>Open to Opportunities</strong>
+                        <p>Full-time, internship, freelance — let's talk!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+    <img src="assets/images/logo.png" alt="JV Logo" class="footer-logo">
+        </div>
+            <p class="footer-tagline">Data Analyst · Full Stack Developer · Fresher</p>
+        </div>
+        <div class="footer-links-row">
+            <a href="#home" class="footer-nav-link">Home</a>
+            <a href="#about" class="footer-nav-link">About</a>
+            <a href="#portfolio" class="footer-nav-link">Portfolio</a>
+            <a href="#services" class="footer-nav-link">Services</a>
+            <a href="#contact" class="footer-nav-link">Contact</a>
+        </div>
+        <div class="social-links">
+            <a class="footer-list-items" href="https://www.linkedin.com/in/jupallevenkat/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in footer-links"></i>
+            </a>
+            <a class="footer-list-items" href="https://github.com/Venkyjupally" target="_blank" title="GitHub">
+                <i class="fab fa-github footer-links"></i>
+            </a>
+            <a class="footer-list-items" href="https://leetcode.com/u/jupalle_venky/" target="_blank" title="LeetCode">
+                <i class="fas fa-code footer-links"></i>
+            </a>
+            <a class="footer-list-items" href="mailto:jupallivenkat634@gmail.com" title="Email">
+                <i class="fas fa-envelope footer-links"></i>
+            </a>
+        </div>
+        <div class="footer-bottom">
+<p>
+        © <span id="year"></span> Jupalle Venkat. Built with
+        <i class="fas fa-heart" style="color:#f97316;"></i> &amp; code.
+    </p>        
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
