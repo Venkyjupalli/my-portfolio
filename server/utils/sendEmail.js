@@ -37,7 +37,7 @@ const sendEmail = async ({ name, email, subject, message }) => {
 
             <br>
 
-            <p><strong>Received:</strong> ${currentDate}</p>
+            <p><strong>🕒 Received:</strong> ${currentDate}</p>
 
           </div>
 
@@ -103,8 +103,11 @@ const sendEmail = async ({ name, email, subject, message }) => {
     `,
   };
 
+  // ===========================
+  // SEND EMAIL TO YOU
+  // ===========================
+
   try {
-    // Email to you
     const adminResponse = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
       to: "jupallivenkat634@gmail.com",
@@ -113,9 +116,20 @@ const sendEmail = async ({ name, email, subject, message }) => {
       html: adminMail.html,
     });
 
-    console.log("Admin Response:", adminResponse);
+    if (adminResponse.error) {
+      console.error("Admin Email Error:", adminResponse.error);
+    } else {
+      console.log("✅ Admin email sent successfully");
+    }
+  } catch (error) {
+    console.error("❌ Failed to send admin email:", error);
+  }
 
-    // Auto reply
+  // ===========================
+  // AUTO REPLY (Optional)
+  // ===========================
+
+  try {
     const userResponse = await resend.emails.send({
       from: "Jupalle Venkat <onboarding@resend.dev>",
       to: email,
@@ -123,12 +137,13 @@ const sendEmail = async ({ name, email, subject, message }) => {
       html: userMail.html,
     });
 
-    console.log("User Response:", userResponse);
-
-    console.log("✅ Emails sent successfully");
+    if (userResponse.error) {
+      console.warn("⚠️ Auto reply skipped:", userResponse.error.message);
+    } else {
+      console.log("✅ Auto reply sent");
+    }
   } catch (error) {
-    console.error("❌ Resend Error:", error);
-    throw error;
+    console.warn("⚠️ Auto reply not sent:", error.message);
   }
 };
 
