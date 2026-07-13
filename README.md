@@ -1,5 +1,7 @@
 # 🌐 Jupalle Venkat — Personal Portfolio Website
 
+![Portfolio Screenshot](assets/screenshots/portfolio-home.png)
+
 [![Live Portfolio](https://img.shields.io/badge/🌍-Live_Portfolio-blue?style=for-the-badge)](https://venkyjupalli.github.io/my-portfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Venkyjupalli/my-portfolio)
 
