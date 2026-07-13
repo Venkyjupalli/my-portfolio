@@ -1,368 +1,331 @@
-🌐 Jupalle Venkat — Personal Portfolio Website
-A modern, full-stack personal portfolio website built with HTML, CSS, and JavaScript on the frontend and a production-grade Node.js + Express + MongoDB backend featuring JWT authentication, Cloudinary image uploads, Nodemailer email delivery, and full REST API architecture.
+# 🌐 Jupalle Venkat — Personal Portfolio Website
 
+[![Live Portfolio](https://img.shields.io/badge/🌍-Live_Portfolio-blue?style=for-the-badge)](https://venkyjupalli.github.io/my-portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Venkyjupalli/my-portfolio)
 
-📋 Table of Contents
-About
-Features
-Project Structure
-Tech Stack
-How to Run
-Environment Variables
-API Endpoints
-Contact Form Flow
-Future Enhancements
-Contact
+A modern, responsive **full-stack portfolio website** showcasing my projects, technical skills, and experience. Built with **HTML, CSS, JavaScript** on the frontend and powered by a **Node.js + Express** backend with **MongoDB Atlas** for data storage and **Resend** for email notifications.
 
+---
 
-📌 About
-This is the personal portfolio of Jupalle Venkat — an Aspiring Data Analyst and Full Stack Developer. The portfolio showcases skills, projects, and services, and features a fully working backend with database storage, email notifications, JWT authentication, and Cloudinary image management.
+## 🔗 Live Demo
 
-The portfolio features a typewriter animation cycling through multiple roles:
+**🌍 Portfolio:**  
+https://venkyjupalli.github.io/my-portfolio/
 
-📊 Aspiring Data Analyst
-🚀 Full Stack Developer
-📈 Power BI Enthusiast
-🐍 Python Developer
-🗄️ SQL Query Expert
-💡 Problem Solver
+---
 
+## 📋 Table of Contents
 
-✨ Features
-Frontend
-🍔 Hamburger Menu — Responsive mobile navigation with open/close toggle
-✍️ Typewriter Effect — Animated role cycling on the hero section
-🎨 Scroll Reveal Animations — Cards and sections animate on scroll using Intersection Observer
-🔵 Active Nav Highlight — Navigation link highlights based on current scroll section
-🌟 Cursor Glow Effect — Subtle glowing cursor effect on desktop
-📱 Fully Responsive — Works perfectly on mobile, tablet, and desktop
-🧭 Sticky Navbar — Navbar changes style on scroll for better UX
-Backend
-📬 Working Contact Form — Saves messages to MongoDB and sends real emails via Nodemailer
-🔐 JWT Authentication — Secure token-based user authentication
-🔒 Password Hashing — Bcrypt encryption for secure password storage
-☁️ Cloudinary Integration — Image upload and cloud storage management
-📁 Multer File Uploads — Handle multipart form data and file uploads
-🗄️ MongoDB Database — Persistent contact message storage with Mongoose
-🌐 CORS Enabled — Cross-origin resource sharing configured
-⚙️ Environment Config — Secure dotenv-based configuration
+- About
+- Features
+- Project Structure
+- Tech Stack
+- Installation
+- Environment Variables
+- API Endpoints
+- Contact Form Workflow
+- Future Enhancements
+- Contact
 
+---
 
-📁 Project Structure
-Github-Portfolio/
+# 📌 About
+
+This is my personal developer portfolio built to showcase my projects, technical skills, certifications, and resume.
+
+The portfolio includes a fully functional backend that allows visitors to contact me through a live contact form. Every submission is securely stored in MongoDB Atlas, and I receive an email notification instantly using the Resend Email API.
+
+---
+
+# ✨ Features
+
+## Frontend
+
+- 🎨 Modern & Clean UI
+- 📱 Fully Responsive Design
+- 🍔 Responsive Mobile Navigation
+- ✍️ Animated Typewriter Effect
+- 🌟 Scroll Reveal Animations
+- 🎯 Active Navigation Highlight
+- 🧭 Sticky Navigation Bar
+- 📄 Resume Download
+- 📬 Contact Form Integration
+
+---
+
+## Backend
+
+- 🚀 REST API built with Express.js
+- 🗄️ MongoDB Atlas Integration
+- 📩 Email Notifications using Resend
+- 📬 Contact Form API
+- 🌐 CORS Enabled
+- 🔒 Environment Variable Configuration
+- ⚡ Fast Cloud Deployment with Render
+
+---
+
+# 📁 Project Structure
+
+```text
+my-portfolio/
 
 │
-
 ├── assets/
-
 │   └── images/
-
-│       ├── logo.png                  # JV logo (gold design)
-
-│       └── profile.jpg               # Profile photo
-
 │
-
-├── server/                           # Backend Server
-
+├── server/
 │   ├── config/
-
-│   │   └── db.js                     # MongoDB connection setup
-
+│   │   └── db.js
 │   │
-
 │   ├── controllers/
-
-│   │   └── contactController.js      # Contact form business logic
-
+│   │   └── contactController.js
 │   │
-
-│   ├── middleware/                   # Express middlewares
-
-│   │
-
 │   ├── models/
-
-│   │   └── contact.js                # Contact Mongoose schema/model
-
+│   │   └── contact.js
 │   │
-
 │   ├── routes/
-
-│   │   └── contactRoutes.js          # Contact API routes
-
+│   │   └── contactRoutes.js
 │   │
-
-│   ├── uploads/                      # Multer file upload directory
-
-│   │
-
 │   ├── utils/
-
-│   │   └── sendEmail.js              # Nodemailer email utility
-
+│   │   └── sendEmail.js
 │   │
-
-│   ├── app.js                        # Express app entry point
-
-│   ├── .env                          # Environment variables (not committed)
-
-│   ├── .gitignore                    # Git ignore rules
-
-│   ├── package.json                  # Backend dependencies
-
-│   └── package-lock.json             # Lockfile
-
+│   ├── app.js
+│   ├── package.json
+│   └── package-lock.json
 │
+├── index.html
+├── style.css
+├── script.js
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-├── index.html                        # Main frontend HTML file
+---
 
-├── style.css                         # All styles and animations
+# 🛠️ Tech Stack
 
-├── script.js                         # All frontend JavaScript
+## Frontend
 
-├── package.json                      # Frontend dependencies (Resend)
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Fetch API
+- Intersection Observer API
 
-└── README.md                         # Project documentation
+---
 
+## Backend
 
-🛠️ Tech Stack
-Frontend
-Technology
-Purpose
-HTML5
-Page structure and content
-CSS3
-Styling, animations, responsive design
-JavaScript (ES6+)
-Interactivity and dynamic effects
-Intersection Observer API
-Scroll reveal animations
-Fetch API
-Contact form submission to backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- Resend API
+- Dotenv
+- CORS
 
-Backend
-Technology
-Version
-Purpose
-Node.js
-Latest
-Backend JavaScript runtime
-Express.js
-^5.2.1
-Web framework and REST API
-MongoDB
-Atlas
-NoSQL database for storing contacts
-Mongoose
-^9.7.4
-MongoDB ODM and schema modeling
-Nodemailer
-^9.0.3
-Email sending utility
-JSON Web Token
-^9.0.3
-Secure user authentication
-Bcrypt
-^6.0.0
-Password hashing and encryption
-Cloudinary
-^2.10.0
-Cloud image storage and management
-Multer
-^2.2.0
-File upload middleware
-CORS
-^2.8.6
-Cross-origin resource sharing
-Dotenv
-^17.4.2
-Environment variable management
-Nodemon
-^3.1.14
-Auto-restart during development
+---
 
-Deployment
-Service
-Purpose
-Render
-Backend API hosting
-MongoDB Atlas
-Cloud database hosting
-Cloudinary
-Image cloud storage
+## Deployment
 
+- GitHub Pages (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
+- Resend (Email Service)
 
+---
 
-▶️ How to Run
-Frontend Only (Quick Preview)
-# Clone the repository
+# 🚀 Installation
 
-git clone https://github.com/Venkyjupalli/portfolio.git
+Clone the repository
 
-# Open index.html directly in browser
-Full Stack (Frontend + Backend)
-Step 1 — Clone the repo
+```bash
+git clone https://github.com/Venkyjupalli/my-portfolio.git
+```
 
-git clone https://github.com/Venkyjupalli/portfolio.git
+Navigate to the project
 
-cd portfolio
+```bash
+cd my-portfolio
+```
 
-Step 2 — Setup Backend
+Install frontend dependencies
 
-cd server
-
+```bash
 npm install
+```
 
-Step 3 — Create .env file (see Environment Variables section below)
+Install backend dependencies
 
-Step 4 — Start Backend Server
+```bash
+cd server
+npm install
+```
 
-# Development mode (with auto-restart)
+Start the backend server
 
-npm run dev
-
-# Production mode
-
+```bash
 npm start
+```
 
-Server starts at http://localhost:5000
+Open `index.html` in your browser or use Live Server.
 
-Step 5 — Open Frontend
+---
 
-Open index.html in your browser or use Live Server in VS Code
+# 🔐 Environment Variables
 
+Create a `.env` file inside the `server` folder.
 
-🔐 Environment Variables
-Create a .env file inside the server/ folder with the following variables:
-
-# Server
-
+```env
 PORT=5000
 
-# MongoDB
+MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING
 
-MONGO_URI=your_mongodb_connection_string
+RESEND_API_KEY=YOUR_RESEND_API_KEY
+```
 
-# JWT
+> ⚠️ Never commit your `.env` file to GitHub.
 
-JWT_SECRET=your_jwt_secret_key
+---
 
-# Nodemailer (Email)
+# 🔌 API Endpoints
 
-EMAIL_USER=your_email@gmail.com
+## Contact API
 
-EMAIL_PASS=your_email_app_password
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/contact` | Submit contact message |
+| GET | `/` | Backend health check |
 
-# Cloudinary
+---
 
-CLOUDINARY_CLOUD_NAME=your_cloud_name
+## Contact Request
 
-CLOUDINARY_API_KEY=your_api_key
-
-CLOUDINARY_API_SECRET=your_api_secret
-
-⚠️ Never commit your .env file to GitHub — it is already added to .gitignore
-
-
-🔌 API Endpoints
-Contact
-Method
-Endpoint
-Description
-POST
-/api/contact
-Submit a contact message
-GET
-/
-Health check — API running status
-
-Request Body for Contact Form
+```json
 {
-
   "name": "John Doe",
-
   "email": "john@example.com",
-
-  "subject": "Hello Venkat",
-
-  "message": "I would like to connect with you!"
-
+  "subject": "Hello",
+  "message": "I'd like to connect with you."
 }
-Response — Success
-{
+```
 
+---
+
+## Success Response
+
+```json
+{
   "success": true,
-
-  "message": "Message sent successfully",
-
-  "data": {
-
-    "name": "John Doe",
-
-    "email": "john@example.com",
-
-    "subject": "Hello Venkat",
-
-    "message": "I would like to connect with you!"
-
-  }
-
+  "message": "Message sent successfully"
 }
-Response — Error
+```
+
+---
+
+## Error Response
+
+```json
 {
-
   "success": false,
-
-  "message": "All fields are required"
-
+  "message": "Server Error"
 }
+```
 
+---
 
-📬 Contact Form Flow
-User fills Contact Form (Frontend)
+# 📬 Contact Form Workflow
 
-        ↓
+```text
+Visitor
 
-JavaScript collects name, email, subject, message
+      │
 
-        ↓
+      ▼
 
-Fetch POST → /api/contact (Backend)
+Portfolio Website (GitHub Pages)
 
-        ↓
+      │
 
-contactController.js validates all fields
+      ▼
 
-        ↓
+Render Backend API
 
-        ├── Saves message to MongoDB (Contact Model)
+      │
 
-        │
+      ▼
 
-        └── Sends email via Nodemailer (sendEmail utility)
+MongoDB Atlas
+(Store Contact Message)
 
-                ↓
+      │
 
-        Success Response → Frontend shows confirmation
+      ▼
 
-        Error Response   → Frontend shows error message
+Resend Email API
 
+      │
 
-🔮 Future Enhancements
-🌙 Dark / Light Mode Toggle — Theme switcher for user preference
-📊 Admin Dashboard — View and manage all contact form submissions
-🏆 Certifications Section — Display earned certificates with images
-📈 GitHub Stats Integration — Live GitHub contribution graph
-🔔 Auto Reply Email — Automatic reply to users who submit contact form
-📱 Mobile App — React Native version of the portfolio
-💬 Chat Widget — Real-time visitor chat support
+      ▼
 
+Email Notification to Me
+```
 
-📞 Contact
-Jupalle Venkat 📧 jupallivenkat634@gmail.com 💼 Aspiring Data Analyst | Full Stack Developer
+---
 
+# 🌟 Highlights
 
+- ✅ Fully Responsive Portfolio
+- ✅ Live Backend API
+- ✅ MongoDB Cloud Database
+- ✅ Email Notification System
+- ✅ Production Deployment
+- ✅ REST API Architecture
 
-⭐ If you like this portfolio, feel free to star the repo and connect!
+---
 
+# 🔮 Future Enhancements
+
+- 🌙 Dark / Light Theme
+- 📊 Admin Dashboard
+- 📈 GitHub Contribution Graph
+- 📄 Blog Section
+- 🤖 AI Chat Assistant
+- 🌐 Custom Domain
+- 📩 Automatic Reply Emails (after verifying a custom domain)
+
+---
+
+# 📞 Contact
+
+## 👨‍💻 Jupalle Venkat
+
+**Aspiring Software Engineer | Full Stack Developer | Data Analyst | AI Enthusiast**
+
+📧 Email  
+jupallivenkat634@gmail.com
+
+🌐 Portfolio  
+https://venkyjupalli.github.io/my-portfolio/
+
+💻 GitHub  
+https://github.com/Venkyjupalli
+
+💼 LinkedIn  
+https://www.linkedin.com/in/jupallevenkat/
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more open-source projects and continuously improve my work.
+
+---
+
+---
+
+**Built with ❤️ by Jupalle Venkat**
