@@ -3,7 +3,7 @@
 ![Portfolio Screenshot](assets/screenshots/portfolio-homepage.png)
 
 [![Live Portfolio](https://img.shields.io/badge/🌍-Live_Portfolio-blue?style=for-the-badge)](https://venkyjupalli.github.io/portfolio-website/)]
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Venkyjupalli/my-portfolio)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Venkyjupalli/portfolio-website)
 
 A modern, responsive **full-stack portfolio website** showcasing my projects, technical skills, and experience. Built with **HTML, CSS, JavaScript** on the frontend and powered by a **Node.js + Express** backend with **MongoDB Atlas** for data storage and **Resend** for email notifications.
 
@@ -12,7 +12,7 @@ A modern, responsive **full-stack portfolio website** showcasing my projects, te
 ## 🔗 Live Demo
 
 **🌍 Portfolio:**  
-https://venkyjupalli.github.io/my-portfolio/
+https://venkyjupalli.github.io/portfolio-website/
 
 ---
 
@@ -310,7 +310,7 @@ Email Notification to Me
 jupallivenkat634@gmail.com
 
 🌐 Portfolio  
-https://venkyjupalli.github.io/my-portfolio/
+https://venkyjupalli.github.io/portfolio-website/
 
 💻 GitHub  
 https://github.com/Venkyjupalli
